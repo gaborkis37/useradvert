@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<title th:text="${title}">UserAdvert</title>
+<meta charset="UTF-8">
+<link th:href="@{/css/navbar.css}" rel="stylesheet"/>
+</head>
+<body>
+	
+	<div class="topnav" th:fragment="navbar">
+		<a href="/">Home</a>
+		<a th:href="@{/users/userlist}">Users</a>
+		<a th:href="@{/adverts/advertslist}">Adverts</a>
+	</div>
+	
+</body>
+</html>

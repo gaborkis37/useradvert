@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>UserAdvert</title>
+	<link th:href="@{/css/navbar.css}" rel="stylesheet"/>
+	<link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+	<div th:replace="~{layouts/navbar_layout :: navbar}"></div>
+
+	<h1>This is the users list</h1>
+	
+	<table id="users">
+		<thead>
+			<tr>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${userList.empty}">
+				<td colspan="2">No users found</td>
+			</tr>
+			<tr th:each="user : ${userList}">
+				<td><span th:text="${user.name}"> Name  </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
